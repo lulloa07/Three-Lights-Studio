@@ -352,19 +352,24 @@
     .service-desc { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.7; }
 
     /* SERVICES */
-    #services { border-bottom: 2px solid var(--charcoal); background: var(--off-white); }
-    .services-header { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-bottom: 1px solid var(--light); }
+    #services { border-bottom: 2px solid var(--charcoal); background: var(--off-white); padding-bottom: 2rem; }
+    .services-header { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-bottom: 2px solid var(--charcoal); background: var(--white); }
     .services-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--navy); }
     .services-header span { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
-    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); }
-    .service-card { padding: 2.5rem; border-right: 1px solid var(--light); transition: background 0.2s; }
-    .service-card:last-child { border-right: none; }
-    .service-card:hover { background: var(--white); }
-    .service-card-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; color: var(--light); line-height: 1; margin-bottom: 1rem; }
-    .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 0.6rem; }
-    .service-card p { font-size: 0.84rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.2rem; }
-    .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem; border: 1px solid var(--light); color: var(--muted); }
+    .services-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; padding: 3rem; }
+    .service-card { position: relative; padding: 2.5rem 2.2rem 2.2rem; background: var(--white); border-radius: 6px; border: 1px solid var(--light); overflow: hidden; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent, var(--blue)); }
+    .service-card:nth-child(1) { --accent: #1a2a3a; }
+    .service-card:nth-child(2) { --accent: #4a90d9; }
+    .service-card:nth-child(3) { --accent: #c9a961; }
+    .service-card:nth-child(4) { --accent: #2d7a5f; }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 14px 34px rgba(26,42,58,0.10); border-color: transparent; }
+    .service-card-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; color: var(--accent, var(--blue)); opacity: 0.9; line-height: 1; margin-bottom: 0.8rem; letter-spacing: -0.02em; }
+    .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--navy); margin-bottom: 0.7rem; font-weight: 600; }
+    .service-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.4rem; }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 0.7rem; background: rgba(74,144,217,0.08); color: var(--navy); border-radius: 3px; transition: background 0.2s, color 0.2s; }
+    .service-card:hover .tag { background: rgba(74,144,217,0.14); }
 
     /* PORTFOLIO */
     #portfolio { border-bottom: 2px solid var(--charcoal); background: var(--off-white); padding-bottom: 2rem; }
@@ -387,6 +392,37 @@
     .portfolio-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; flex: 1; }
     .portfolio-link { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--navy); padding-bottom: 0.1rem; transition: color 0.2s, border-color 0.2s; align-self: flex-start; }
     .portfolio-link:hover { color: var(--blue); border-color: var(--blue); }
+
+    /* FAQ */
+    #faq { border-bottom: 2px solid var(--charcoal); background: var(--white); }
+    .faq-header { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-bottom: 2px solid var(--charcoal); }
+    .faq-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--navy); }
+    .faq-header span { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+    .faq-stats { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--navy); }
+    .faq-stat { padding: 2.5rem 1.8rem; border-right: 1px solid rgba(255,255,255,0.12); color: var(--white); }
+    .faq-stat:last-child { border-right: none; }
+    .faq-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3.2rem; font-weight: 600; color: var(--blue); line-height: 1; margin-bottom: 0.6rem; }
+    .faq-stat-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white); margin-bottom: 0.6rem; }
+    .faq-stat-desc { font-size: 0.84rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+    .faq-list { padding: 3rem; max-width: 900px; margin: 0 auto; }
+    .faq-intro { text-align: center; margin-bottom: 3rem; }
+    .faq-intro-eyebrow { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--blue); margin-bottom: 1rem; }
+    .faq-intro h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 600; color: var(--navy); line-height: 1.2; }
+    .faq-intro h3 em { color: var(--blue); font-style: italic; }
+    .faq-item { border-bottom: 1px solid var(--light); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { padding: 1.5rem 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; transition: color 0.2s; background: none; border: none; width: 100%; text-align: left; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--navy); }
+    .faq-q:hover { color: var(--blue); }
+    .faq-icon { flex-shrink: 0; width: 28px; height: 28px; border: 1px solid var(--light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--blue); transition: transform 0.25s, background 0.2s; font-weight: 400; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--blue); color: var(--white); border-color: var(--blue); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.25s ease; }
+    .faq-item.open .faq-a { max-height: 600px; padding-bottom: 1.5rem; }
+    .faq-a p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; margin-bottom: 0.8rem; }
+    .faq-a p:last-child { margin-bottom: 0; }
+    .faq-a ul { margin: 0.8rem 0; padding-left: 0; list-style: none; }
+    .faq-a ul li { font-size: 0.92rem; color: var(--muted); line-height: 1.8; padding-left: 1.4rem; position: relative; margin-bottom: 0.6rem; }
+    .faq-a ul li::before { content: '—'; position: absolute; left: 0; color: var(--blue); font-weight: 600; }
+    .faq-a strong { color: var(--navy); font-weight: 600; }
 
     /* CONTACT */
     #contact { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 2px solid var(--charcoal); }
@@ -432,7 +468,8 @@
       .about-left { padding: 3rem 1.5rem; border-right: none; border-bottom: 2px solid var(--charcoal); }
       .about-right { padding: 3rem 1.5rem; }
       .services-grid { grid-template-columns: 1fr; }
-      .service-card { border-right: none; border-bottom: 1px solid var(--light); }
+      .services-grid { grid-template-columns: 1fr; padding: 1.5rem; gap: 1.5rem; }
+      .service-card { padding: 2rem 1.8rem 1.8rem; }
       .portfolio-grid { grid-template-columns: 1fr; padding: 1.5rem; gap: 1.5rem; }
       .portfolio-body { padding: 1.5rem; }
       #contact { grid-template-columns: 1fr; }
@@ -441,6 +478,12 @@
       footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 1.5rem; }
       .form-row { grid-template-columns: 1fr; gap: 0; }
       .services-header, .portfolio-header { padding: 1.5rem; }
+      .faq-stats { grid-template-columns: repeat(2, 1fr); }
+      .faq-stat { padding: 1.8rem 1.2rem; border-right: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); }
+      .faq-stat:nth-child(2n) { border-right: none; }
+      .faq-stat:nth-last-child(-n+2) { border-bottom: none; }
+      .faq-list { padding: 2rem 1.5rem; }
+      .faq-header { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -454,6 +497,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#portfolio">Work</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
   </ul>
@@ -465,6 +509,7 @@
   <a href="#about">About</a>
   <a href="#services">Services</a>
   <a href="#portfolio">Work</a>
+  <a href="#faq">FAQ</a>
   <a href="#contact">Contact</a>
   <a href="#contact" class="m-cta">Let's Talk</a>
 </div>
@@ -564,6 +609,14 @@
         <span class="tag">Google Workspace</span><span class="tag">Analytics</span><span class="tag">Social Setup</span><span class="tag">Ongoing Support</span>
       </div>
     </div>
+    <div class="service-card">
+      <div class="service-card-num">04</div>
+      <h3>Website Management</h3>
+      <p>We'll keep your website safe, up-to-date, and running smoothly, so you can focus on growing your business.</p>
+      <div class="service-tags">
+        <span class="tag">Security Updates</span><span class="tag">Performance</span><span class="tag">Backups</span><span class="tag">Monitoring</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -637,6 +690,78 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-header">
+    <h2>Why It Matters</h2>
+    <span>FAQ</span>
+  </div>
+  <div class="faq-stats">
+    <div class="faq-stat">
+      <div class="faq-stat-num">97%</div>
+      <div class="faq-stat-title">Search Supremacy</div>
+      <div class="faq-stat-desc">Digital discovery is now the standard; 97% of people learn about local businesses online before ever stepping foot in-store.</div>
+    </div>
+    <div class="faq-stat">
+      <div class="faq-stat-num">75%</div>
+      <div class="faq-stat-title">First Impressions</div>
+      <div class="faq-stat-desc">Credibility is visual. 75% of consumers admit they judge a brand's professional standing by its website design.</div>
+    </div>
+    <div class="faq-stat">
+      <div class="faq-stat-num">90%</div>
+      <div class="faq-stat-title">The Power of Praise</div>
+      <div class="faq-stat-desc">Reviews aren't just feedback — they're engines for growth. 90% of buyers say positive online sentiment directly drives their purchases.</div>
+    </div>
+    <div class="faq-stat">
+      <div class="faq-stat-num">92%</div>
+      <div class="faq-stat-title">Local SEO Dominance</div>
+      <div class="faq-stat-desc">Competition happens on the first page. 92% of users never look past the initial search results when picking a local service.</div>
+    </div>
+  </div>
+  <div class="faq-list">
+    <div class="faq-intro">
+      <div class="faq-intro-eyebrow">Frequently Asked Questions</div>
+      <h3>Let's clear things <em>up.</em></h3>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">Why choose a custom website over a generic template?<span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>Templates are built to fit everyone, which usually means they don't truly fit anyone. A custom site is engineered specifically for your business goals and audience. We skip the "bloat" of templates to focus on conversion-led layouts, strategic calls-to-action, and a technical foundation designed to turn visitors into leads.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">How do you ensure my business actually shows up on Google?<span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>We don't "add" SEO later; we bake it into the foundation. This includes:</p>
+        <ul>
+          <li><strong>Technical Excellence:</strong> Clean code, lightning-fast speeds, and mobile-first design.</li>
+          <li><strong>Local Dominance:</strong> We optimize your site for location-specific keywords and align it with your Google Business Profile.</li>
+          <li><strong>Search Architecture:</strong> We organize your content so search engines — and your customers — can find exactly what they need instantly.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">What exactly is SEO and why does it matter?<span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>Search Engine Optimization (SEO) is the practice of improving your website to increase its visibility when people search for products or services related to your business. It is the difference between being a "hidden gem" and a market leader. High SEO rankings mean more organic (free) traffic and higher trust from potential clients.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">Do you stick around to help after the site goes live?<span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>Absolutely. We view ourselves as your long-term digital partner. We offer support plans that handle the "heavy lifting" — hosting, security patches, performance monitoring, and updates — so you can focus on running your business while your site stays healthy and secure.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">What is the investment for a custom web project?<span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>Because every business is unique, our pricing is based on the specific scope and complexity of your project.</p>
+        <p>We provide transparent, milestone-based estimates upfront. No "hidden fees," no hourly surprises — just clear pricing for clear results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-left">
@@ -675,6 +800,7 @@
           <option>Website Design &amp; Development</option>
           <option>Branding &amp; Identity</option>
           <option>Digital Setup &amp; Strategy</option>
+          <option>Website Management</option>
           <option>Full Package</option>
           <option>Not sure yet — let's talk</option>
         </select>
@@ -693,6 +819,7 @@
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#portfolio">Work</a>
+    <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
   </div>
 </footer>
@@ -710,6 +837,13 @@
       hamburger.classList.remove('active');
       mobileMenu.classList.remove('active');
       document.body.style.overflow = '';
+    });
+  });
+
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.parentElement;
+      item.classList.toggle('open');
     });
   });
 </script>
